@@ -1,6 +1,7 @@
 # Interview
 This project is build to create an Order by using 3rd part API
 Before run this project make sure your back-ends(which is attach with this file or on repos:https://github.com/AndyUC/JungTalent-Interview-backend) is running. 
+you can change baseURL(sever site) in page/axios.tex
 to create order you should do for 3 step:
 step 1: choose a product in homepage and go to /:productparam with have information and set quantity you select
 step 2: go to cart page by click cartbutton on nav bar
