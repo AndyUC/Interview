@@ -1,0 +1,72 @@
+.ckeckoutFormWrapper {
+    display: flex;
+    flex-flow: wrap;
+    margin-left: 3%;
+    margin-right: 3%;
+    column-gap: 3%;
+    margin-block: 30px;
+    row-gap: 30px;
+}
+.ckeckoutFormWrapper .orderForm{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    background-color: white;
+    
+}
+.ckeckoutFormWrapper .orderForm .orderInputWrapper{
+ margin-bottom:15px;
+}
+.ckeckoutFormWrapper .orderForm .orderInputWrapper .subTitle{
+    margin-left: 4%;
+    font-size: 20px;
+    margin-bottom: 10px;
+ }
+.ckeckoutFormWrapper .orderForm .orderInputWrapper .orderInput{
+    width: 90%;
+    height: 30px;
+    font-size: 17px;
+    margin-left: 4%;
+}
+.ckeckoutFormWrapper .orderForm .itemsForm{
+    width:90% ;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    margin-left: 5%;
+    margin-top: 20px;
+}
+.ckeckoutFormWrapper .orderForm .Cash {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-left: 5%;
+
+}
+.ckeckoutFormWrapper .orderForm .Cash .cashDetailsForm{
+    display: flex;
+    flex-direction: row;
+    row-gap: 10px;
+}
+.ckeckoutFormWrapper .orderForm .Cash .cashDetailsForm .cashDetailTitle{
+    font-size: 15px;
+    width: 50%;
+}
+.ckeckoutFormWrapper .orderForm .Cash .cashDetailsForm .cashDetaiAmount{
+    font-size: 15px;
+    width: 50%;
+    text-align: end;
+}
+.ckeckoutFormWrapper .orderForm .Cash .cashTitle{
+    font-size: 20px;
+    font-weight: 700;
+    margin-block-start: 20px;
+    margin-block-end: 10px;
+}
+
+.ckeckoutFormWrapper .orderForm .orderInputWrapper .error{
+    margin-left: 5%;
+    margin-top: '5px';
+    color:red;
+    font-style: italic;
+}

@@ -1,0 +1,18 @@
+.ItemWrapper{
+ 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+}
+.ItemWrapper .itemImage{
+    width: 15%;
+    aspect-ratio: 1/1;
+}
+.ItemWrapper .inforWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
