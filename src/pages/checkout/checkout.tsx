@@ -51,7 +51,7 @@ function Checkout() {
     const [billingError, setBillingError] = useState({phoneNumber:'',countryCode:'',name:'',postcode:'',suburb:'',line1:''});
     const [itemError, setItemError] = useState('');
     const client = axios.create({
-        baseURL: "http://localhost:3000/"
+        baseURL: "https://jungtalentinterview-be.onrender.com/"
     });
     useEffect(() => {
         if (state.totalAmount > 0) {
