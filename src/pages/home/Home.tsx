@@ -22,7 +22,7 @@ export function Home() {
   const [products, setProducts] = useState<producttype[]>([]);
   const fetchData= async(api:string)=>{
       const client = axios.create({
-        baseURL: "http://localhost:3000/" 
+        baseURL: "https://jungtalentinterview-be.onrender.com/" 
       });
       try {
        const  res = await client.get(api)
