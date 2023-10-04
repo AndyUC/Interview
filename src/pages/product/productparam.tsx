@@ -133,10 +133,7 @@ export function ProductParam() {
                                     <span style={{fontSize:'20px',fontWeight:550}}>Add to Cart
                                     </span>
                                 </button>
-                                <button type="button" className="buy-button" style={{ display: "flex", flexDirection: 'row',alignItems:"center", columnGap: '10px', backgroundColor:'red',color:'white',border:'1px solid red',height:'40px' }} >
-                                    <IoBagCheckOutline style={{height:'30px',width:'30px'}} />
-                                    <span style={{fontSize:'20px',fontWeight:550}}>Buy Now</span>
-                                </button>
+                               
                             </div>
                         </div>
                     </div >
