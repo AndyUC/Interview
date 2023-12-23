@@ -1,0 +1,71 @@
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(40deg,#a3e6f6, #f39ef6);
+}
+.login .loginWrapper{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    margin-block: 50px;
+    height: 500px;
+    row-gap: 30px;
+    background-color: white;
+ 
+}
+.login .loginWrapper .inputWrapper{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+.login .loginWrapper .inputWrapper .loginTitle{
+    align-self: flex-start;
+    font-size: 20px;
+    font-weight: 320;
+}
+.login .loginWrapper .inputWrapper .loginInput{
+    align-self: flex-start;
+    font-size: 20px;
+    width: 100%;
+    
+}
+.login .loginWrapper .forgot{
+    align-self: flex-end;
+    margin-right: 25px;
+}
+.login .loginWrapper .signIn{
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    background-image: linear-gradient(40deg,#2c2cee, #bd2ee5);
+    color: white;
+}
+.login .loginWrapper .oAuth{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 10px;
+}
+.login  .loginWrapper .oAuth .oAuthDetails{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 50px;
+
+}
+.login  .loginWrapper .oAuth .oAuthTitle{
+    font-size: larger;
+    font-weight: 300;
+}
+.login  .loginWrapper .oAuth .oAuthDetails .icon{
+    width: 50px;
+    height: 50px;
+}

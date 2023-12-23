@@ -1,0 +1,82 @@
+.order{
+    background-color: white;
+}
+.order .orderHeader{
+    display: flex;
+    flex-direction: row;
+    column-gap: 15px;
+    justify-content: center;
+    align-items: center;
+
+}
+.order .headerItem{
+    width: 12%;
+    text-wrap: wrap;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.order .orderContent{
+    display: flex;
+    flex-direction: column;
+}
+.order .orderContent .orderSearching{
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    margin-left: 10px;
+}
+.order .orderContent .orderSearching .orderSearchingBar{
+    width: calc(60% - 30px);
+    display: flex;
+    flex-direction: row;
+    height: 25px;
+    column-gap: 10px;
+}
+.order .orderContent .orderSearching .orderSearchingTitle{
+    width: 100px;
+    align-items: center;
+}
+.order .orderContent .orderSearching .orderSearchingButton{
+    width: 25px;
+    align-items: center;
+    justify-content: center;
+}
+.order .orderContent .orderSearching .orderSearchingButton .searchingIcon{
+    width: 25px;
+    height: 25px;
+    align-items: center;
+    justify-content: center;
+}
+.order .orderContent .orderSearching .orderSearchingInput{
+    width:-webkit-fill-available;
+    align-items: center;
+    justify-content: center;
+}
+.order .orderContent .orderDetails{
+    display: flex;
+    flex-direction: row;
+}
+.order .orderContent .orderDetails .orderDetailsProduct{
+    width: 40%;
+    display: flex;
+}
+.order .orderContent .orderDetails .orderDetailsAmount{
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.order .orderContent .orderDetails .orderDetailsType{
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.order .orderContent .orderDetails .orderDetailsAction{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Routes, Route, Outlet, Link, useLocation } from "react-router-dom";
 import { Product } from "./product";
 import axios from "axios";
+import { client } from "../../../clientaxios";
 
 
 
@@ -21,9 +22,7 @@ export function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const [products, setProducts] = useState<producttype[]>([]);
   const fetchData= async(api:string)=>{
-      const client = axios.create({
-        baseURL: "http://localhost:3000/" 
-      });
+     
       try {
        const  res = await client.get(api)
        console.log(res.data)
@@ -41,7 +40,7 @@ export function Home() {
 
   return (
     <div>
-      <h2 style={{marginLeft:'20px'}}>GỢI Ý CHO BẠN
+      <h2 style={{marginLeft:'20px', color:"white"}}>GỢI Ý CHO BẠN
 
       </h2>
 

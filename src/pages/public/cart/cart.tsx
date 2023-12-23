@@ -3,9 +3,9 @@ import { BsCartPlus } from 'react-icons/bs'
 import { PiSparkleDuotone } from 'react-icons/pi'
 import { IoBagCheckOutline } from 'react-icons/io5'
 import { BiTrash } from 'react-icons/bi'
-import { MainContext } from "../../provider/OrderProvider";
-import { setCart, setCheckout, setTotalAmount } from "../../provider/orderStore";
-import { SelectContext } from "../../provider/SelectProvider";
+import { MainContext } from "../../../provider/OrderProvider";
+import { setCart, setCheckout, setTotalAmount } from "../../../provider/orderStore";
+import { SelectContext } from "../../../provider/SelectProvider";
 import { useNavigate } from "react-router";
 
 type CartProductProps = {
@@ -21,7 +21,7 @@ type CartProductProps = {
 function CartProduct(props: CartProductProps) {
 
     const { state, dispatch } = useContext(MainContext)
-   
+   console.log(state.cart)
     const deacreaseClick=()=>{
         if(props.quantity>1){
             const newcart = state.cart

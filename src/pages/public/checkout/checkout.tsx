@@ -3,10 +3,10 @@ import './checkout.css'
 
 
 
-import { MainContext } from '../../provider/OrderProvider';
+import { MainContext } from '../../../provider/OrderProvider';
 import { CheckoutItem } from './checkoutItem/checkoutItem';
 import axios from 'axios';
-import { setCart, setCheckout, setTotalAmount } from '../../provider/orderStore';
+import { setCart, setCheckout, setTotalAmount } from '../../../provider/orderStore';
 
 
 
@@ -51,7 +51,7 @@ function Checkout() {
     const [billingError, setBillingError] = useState({phoneNumber:'',countryCode:'',name:'',postcode:'',suburb:'',line1:''});
     const [itemError, setItemError] = useState('');
     const client = axios.create({
-        baseURL: "http://localhost:3000/"
+        baseURL: "https://jungtalentinterview-be.onrender.com"
     });
     useEffect(() => {
         if (state.totalAmount > 0) {

@@ -1,0 +1,1 @@
+export const data =[{date:'Mon',access:25},{date:'Tue',access:20},{date:'Wes',access:10},{date:'Thus',access:20},{date:'Fri',access:22},{date:'Sat',access:10},{date:'Sun',access:10}]

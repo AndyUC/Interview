@@ -4,8 +4,9 @@ import { PiSparkleDuotone, PiStool } from 'react-icons/pi'
 import { IoBagCheckOutline } from 'react-icons/io5'
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router";
-import { MainContext } from "../../provider/OrderProvider";
-import { setCart } from "../../provider/orderStore";
+import { MainContext } from "../../../provider/OrderProvider";
+import { setCart } from "../../../provider/orderStore";
+import { client } from "../../../clientaxios";
 
 type Producttype = {
     _id: string,
@@ -27,9 +28,7 @@ export function ProductParam() {
     const navigate= useNavigate();
     console.log(state.cart)
     const fetchData = async (api: string) => {
-        const client = axios.create({
-            baseURL: "http://localhost:3000/"
-        });
+       
         try {
             const res = await client.get(api + location.pathname)
             setPost(res.data)
@@ -60,7 +59,7 @@ export function ProductParam() {
         navigate('/')
     }
     return (
-        <section className="product-briefing" style={{ display: "flex", flexDirection: 'column', marginLeft: '20px', rowGap: '50px' }}>
+        <section className="product-briefing" style={{ display: "flex", flexDirection: 'column', minHeight:'-webkit-fill-available', marginLeft: '20px', rowGap: '50px' }}>
 
             <section className="product-section" style={{ display: "flex", flexDirection: "row", justifyContent: "center", columnGap: '40px', width: '90%', backgroundColor: "#F5F4F4", borderRadius: '5px 5px 5px 5px' }}>
 

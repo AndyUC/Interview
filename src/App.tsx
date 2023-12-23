@@ -1,45 +1,28 @@
 import './App.css';
 import { Routes, Route, Outlet, Link } from "react-router-dom";
-import { Home } from './pages/home/Home';
-import { createContext, useContext, useReducer, useState } from 'react';
-import { BsCart4 } from 'react-icons/bs'
+import { Home } from './pages/public/home/Home';
+import { createContext, useContext, useEffect, useReducer, useState } from 'react';
+import { BsCart4, BsSearch } from 'react-icons/bs'
 import {AiTwotoneHome} from 'react-icons/ai'
-import { Cart } from './pages/cart/cart';
-import Checkout from './pages/checkout/checkout';
-import { ProductParam } from './pages/product/productparam';
+import { Cart } from './pages/public/cart/cart';
+import Checkout from './pages/public/checkout/checkout';
+import { ProductParam } from './pages/public/product/productparam';
 import { initState, orderReducer } from './provider/orderStore';
 import { MainContext } from './provider/OrderProvider';
-
-
-function Layout() {
-  const {state,dispatch}= useContext(MainContext)
-  return (
-    <div className='navbar' style={{borderBottom:'1px solid gray',marginBlockEnd:'20px',backgroundColor:'#F7F6F6'}}>
-      <nav style={{backgroundColor:'White',display:'flex',flexDirection:'row', width:'100%', height:'100px',alignItems:'center'}}>
-            <Link to="/" style={{color:'black'}}><AiTwotoneHome style={{width:'50px',height:'50px',position:'absolute',left:'10%',top:'25px'}}/></Link>
-      <div className="cart-drawer-container" style={{backgroundColor:'White'}}>
-        <Link className="cart-drawer flex v-center" id="cart_drawer_target_id" to="/cart" style={{color:'black'}}>
-          <BsCart4 style={{width:'50px',height:'50px',position:'absolute',right:'10%',top:'25px',zIndex:'2'}}/>
-          <div className="shopee-cart-number-badge" aria-hidden="true" style={{fontSize:'20px',position:'absolute',right:'9%',top:'5px',width:'40px',height:'40px',borderRadius:"20px",display:'flex',justifyContent:'center',alignItems:'center',backgroundColor:'red',color:'white'}}>{state.cart.length}</div>
-        </Link>
-      </div>
-      </nav>
-      
-      <Outlet />
-
-      
-    </div>
-  );
-}
-
-
-
+import logo from './asset/image/logo.jpeg'
+import { Login } from './pages/public/login/login';
+import { Admin } from './pages/private/admin/admin';
+import { AdminLayout, Help, Layout } from './Applayout';
+import Column from 'antd/es/table/Column';
+import { Order } from './pages/private/order/order';
+import { mainsw } from './checknotification';
+import { TrophyFilled } from '@ant-design/icons';
 
 function NoMatch() {
   return (
-    <div>
-      <h2>Nothing to see here!</h2>
-      <p>
+    <div style={{display:'flex', flexDirection:'column',justifyContent:'center'}}>
+      <h2 style={{textAlign:'center'}}>Nothing to see here!</h2>
+      <p  style={{textAlign:'center'}}>
         <Link to="/">Go to the home page</Link>
       </p>
     </div>
@@ -49,7 +32,27 @@ function NoMatch() {
 
 function App() {
   const [state, dispatch] = useReducer(orderReducer,initState)
-
+  useEffect(() => {
+    if ('Notification' in window && 'serviceWorker' in navigator) {
+      Notification.requestPermission().then(function(permission) {
+        if (permission === 'granted') {
+          navigator.serviceWorker.ready.then(async function(registration) {
+            // Đăng ký sự kiện push với service worker
+            try {
+              const subscription =  await registration.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: "BK-LPd2hDKcEzDOsFncWG4_1KOyZOWx8EAbSK8arLHBCF5Df-m12Rt8mz-JNV7KHmILsuRbn0RbvNisgoYvIElM" })
+              console.log(subscription)
+              const endpoint = subscription.endpoint
+              
+              const dataToSend =  {subscription: subscription}
+              localStorage.setItem("subscription",JSON.stringify(dataToSend))
+            } catch (error) {
+              console.error('Lỗi khi đăng ký push:', error);
+            }
+          });
+        }
+      });
+    }
+  },[])
   return (
    
       <MainContext.Provider  value={{state,dispatch}}>
@@ -60,9 +63,13 @@ function App() {
           <Route path="checkout" element={<Checkout />} />
           <Route path="*" element={<NoMatch />} />
           <Route path="/:id" element={<ProductParam />} />
+          <Route path='/login' element={<Login/>}/>
+        </Route>
+        <Route path='/admin'element={<AdminLayout /> }>
+           <Route index  element={<Admin/>}/>
+           <Route path="order" element={< Order/>} />
         </Route>
       </Routes>
-
       
     </MainContext.Provider>
  

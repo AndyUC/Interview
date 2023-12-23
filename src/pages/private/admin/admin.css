@@ -1,0 +1,70 @@
+.admin{
+margin-left: 250px;
+display: flex;
+flex-direction: column;
+
+}
+.admin .adminContent{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin-block: 20px;
+    width: 90%;
+}
+.admin .adminContent .to-do-box{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.admin .adminContent .to-do-box .to-do-box-aitem{
+    width: 24%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 0.5px dotted gray;
+    
+}
+.admin .adminContent .to-do-box .to-do-box-aitem .item-title{
+    color:blue;
+    text-decoration: underline white;
+}
+.admin .adminContent .to-do-box .to-do-box-aitem .item-desc{
+    color:black;
+    text-decoration: underline white;
+    font-size: 15px;
+    text-align: center;
+}
+.admin .adminContent .box{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    
+}
+.admin .adminContent .box .content{
+    width: 45%;
+    margin-block: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 5px;
+    justify-content: center;
+}
+.admin .adminContent .box .content .item{
+    width: 45%;
+}
+.admin .adminContent .box .content .item .item-increase{
+    font-size: 12px;
+    color:gray;
+}
+.admin .adminContent .box .content .item .item-title{
+    color:gray;
+}
+.admin .adminContent .box .content .item .item-data{
+    margin-block: 10px;
+}

@@ -1,0 +1,96 @@
+.navbar{
+    border-bottom: 1px solid gray;
+    margin-block-end: 20px;
+    background-color: rgb(247, 246, 246);
+}  
+.navbar .navdetails{
+    background-color: lightblue;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    position: 'fixed'
+   
+}
+
+.navbar .navdetails .home{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar .navdetails .searchBar{
+    width: 70%;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+.navbar .navdetails .cart-drawer-container{
+    width: 70%;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar .adminSlidebar{
+    position: fixed;
+    z-index: 10;
+    width: 220px;
+    height: calc(100% - 100px);
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background: #fff;
+    scrollbar-width: thin;
+    left: 0;
+    bottom:0;
+    display: auto;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    background-color: #F9FDFD;
+}
+.navbar .adminSlidebar .sideBarWrapper{
+    display: flex;
+    flex-direction: column;
+    margin-block: 1em;
+    margin-left: 20px;
+}
+.navbar .adminSlidebar .sideBarWrapper .sideBarItem{
+    color:#6B6868;
+    font-size: 20px;
+    font-weight: 600;
+}
+.navbar .adminSlidebar .sideBarWrapper .sideBarItem .sideBarItemIcons{
+    width: 20px;
+    margin-right: 10px;
+}
+
+.navbar .adminSlidebar .sideBarWrapper .sideBarSubItem{
+    display: flex;
+    flex-direction: column;
+    margin-block: 0.5em;
+    margin-left: 10px;
+}
+.navbar .adminMainContent{
+    width: 784px;
+    max-width: 784px;
+    padding: 24px 24px 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 220px;
+
+}
+.navbar .adminSlidebar .sideBarWrapper .sideBarSubItem .subIndex{
+    width: 80%;
+    text-decoration: none;
+    color: black;
+}
+.navbar .ant-float-btn-group .ant-float-btn {
+    background-color: lightblue !important;
+}
