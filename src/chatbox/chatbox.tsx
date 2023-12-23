@@ -2,7 +2,7 @@ import { io } from 'socket.io-client'
 import './chatbox.css'
 import { useEffect, useRef, useState } from 'react'
 
-const ENDPOINT = 'http://localhost:3000/';
+const ENDPOINT = 'https://jungtalentinterview-be.onrender.com';
 const socket = io(ENDPOINT, {
     withCredentials: true,
 
