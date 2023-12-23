@@ -7,6 +7,7 @@ import { MainContext } from '../../../provider/OrderProvider';
 import { CheckoutItem } from './checkoutItem/checkoutItem';
 import axios from 'axios';
 import { setCart, setCheckout, setTotalAmount } from '../../../provider/orderStore';
+import { client } from '../../../clientaxios';
 
 
 
@@ -50,9 +51,7 @@ function Checkout() {
     const [shippingError, setShippingError] = useState({phoneNumber:'',countryCode:'',name:'',postcode:'',suburb:'',line1:''});
     const [billingError, setBillingError] = useState({phoneNumber:'',countryCode:'',name:'',postcode:'',suburb:'',line1:''});
     const [itemError, setItemError] = useState('');
-    const client = axios.create({
-        baseURL: "https://jungtalentinterview-be.onrender.com"
-    });
+  
     useEffect(() => {
         if (state.totalAmount > 0) {
             setShipAmount(20)
